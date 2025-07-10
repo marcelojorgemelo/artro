@@ -1,0 +1,13 @@
+[build]
+  # Comando que o Netlify vai rodar para instalar as dependências
+  command = "pip install -r requirements.txt"
+  # Pasta onde as Funções Serverless (nosso Python) estão
+  functions = "api"
+  # Pasta onde os arquivos estáticos (nosso HTML) estão
+  publish = "templates"
+
+[[redirects]]
+  # Redireciona todas as requisições para a nossa função serverless
+  from = "/*"
+  to = "/.netlify/functions/main"
+  status = 200
